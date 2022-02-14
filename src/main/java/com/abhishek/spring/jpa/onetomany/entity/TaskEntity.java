@@ -1,4 +1,4 @@
-package com.abhishek.spring.jpa.onetomany;
+package com.abhishek.spring.jpa.onetomany.entity;
 
 import lombok.*;
 import org.hibernate.annotations.*;

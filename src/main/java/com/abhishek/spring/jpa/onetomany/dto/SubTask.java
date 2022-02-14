@@ -1,4 +1,4 @@
-package com.abhishek.spring.jpa.onetomany;
+package com.abhishek.spring.jpa.onetomany.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
