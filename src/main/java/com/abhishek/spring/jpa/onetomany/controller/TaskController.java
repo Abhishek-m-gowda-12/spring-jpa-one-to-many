@@ -1,5 +1,7 @@
-package com.abhishek.spring.jpa.onetomany;
+package com.abhishek.spring.jpa.onetomany.controller;
 
+import com.abhishek.spring.jpa.onetomany.dto.Task;
+import com.abhishek.spring.jpa.onetomany.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -41,6 +43,26 @@ public class TaskController {
 
         log.info("api = /task, method = POST, result = SUCCESS");
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @DeleteMapping
+    public ResponseEntity<?> deleteTask(@RequestParam List<Long> taskIds) {
+        log.info("api = /task, method = DELETE, result = IN_PROGRESS");
+
+        taskService.deleteTasks(taskIds);
+
+        log.info("api = /task, method = DELETE, result = SUCCESS");
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PutMapping
+    public ResponseEntity<?> updateTasks(@RequestBody List<Task> tasks) {
+        log.info("api = /task, method = PUT, result = IN_PROGRESS");
+
+        taskService.updateTasks(tasks);
+
+        log.info("api = /task, method = PUT, result = SUCCESS");
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PostMapping(value = "/pagination")

@@ -1,5 +1,6 @@
-package com.abhishek.spring.jpa.onetomany;
+package com.abhishek.spring.jpa.onetomany.repository;
 
+import com.abhishek.spring.jpa.onetomany.entity.TaskEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
